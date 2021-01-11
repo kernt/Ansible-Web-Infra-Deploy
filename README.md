@@ -2,7 +2,7 @@
 
 Ansible is a simple agentless automation technology that has caught the world of software configuration management by storm!  Ansible allows IT operators to automate repetitive infrastructure tasks such as installation, configuration and deployment of software using a simple yet powerful automation language *YAML*.  Ansible is an open source project and is the core automation engine powering Red Hat Ansible Tower.  Ansible provides close to 800+ (at the time of this writing) pre-built modules that can be used to automate complex IT infrastructure tasks ranging from web/application/database server deployment to software configuration management to workflow orchestration.
 
-**Important Notes:** 
+**Important Notes:**
 1.  This project assumes readers are familiar with writing simple Ansible automation scripts using the YAML language and/or have prior experience working with other IT infrastructure automation tools such as Chef and Puppet.
 2.  This project was tested with Ansible v2.2.1.0 and Red Hat JBoss Web Server v3.1.  The provided Ansible scripts can be easily modified to deploy vanilla (Apache community bits) Apache Web/Httpd and Apache Tomcat 7/8 servers if needed.
 3.  This project was only tested on hosts running Red Hat Enterprise Linux v7.1+.  The provided Ansible scripts will have to be modified for deploying the infrastructure components on Windows hosts.
@@ -22,6 +22,7 @@ For easy and quick reference, readers can refer to the following on-line resourc
 9.  [mod_cluster Apache Httpd Load Balancer](http://mod-cluster.jboss.org/)
 
 ## Description
+
 This project provides Ansible automation scripts for implementing a multi-server (host) distributed web application deployment architecture.  Typically, in a 3-tier web application deployment architecture, web / proxy servers are deployed within tier 1.  These servers act as a reverse proxy and include a load balancer component which intelligently distributes the incoming http requests to backend application server instances running on multiple machines.  Tier 2 infrastructure components in this topology comprise of application server (Web/JEE) instances that execute web/enterprise applications.  And lastly, tier 3 components include (but are not limited to) database servers, Web/Rest services and/or backend/legacy applications.  In this project, we will be using Ansible to automate the installation, configuration and deployment of web infrastructure components within tiers 1 and 2.  The provided Ansible scripts can be easily adapted to deploy tier-3 components such as database servers with minimal effort.
 
 For this project, the widely popular and battle tested *Apache Web/Httpd Server* will be deployed in tier 1.  And for tier 2, the tried and true *Apache Tomcat Server* will be used as the backend Java/Web application server.  Both of these web application infrastructure components are actively supported by the respective Apache open source communities and have stood the test of time.  Here are some cool facts 
